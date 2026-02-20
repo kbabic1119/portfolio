@@ -108,7 +108,7 @@ body {
 
 .nav-link:hover {
     color: var(--dark);
-    background: rgba(0,0,0,0.04);
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .nav-link.active {
@@ -209,8 +209,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ============================================
@@ -239,8 +246,8 @@ body {
     position: absolute;
     opacity: 0.7;
     transition: top 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
-                left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
-                opacity 0.5s ease;
+        left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.5s ease;
     animation: float 6s ease-in-out infinite;
     pointer-events: auto;
     cursor: default;
@@ -250,71 +257,284 @@ body {
     opacity: 1;
 }
 
-.icon-xl:hover { transform: scale(1.8); }
-.icon-md:hover { transform: scale(1.4); }
-.icon-sm:hover { transform: scale(1.1); }
+.icon-xl:hover {
+    transform: scale(1.8);
+}
+
+.icon-md:hover {
+    transform: scale(1.4);
+}
+
+.icon-sm:hover {
+    transform: scale(1.1);
+}
 
 /* --- Icon sizes --- */
-.icon-xl { transform: scale(1.6); }
-.icon-md { transform: scale(1.2); }
-.icon-sm { transform: scale(0.9); }
+.icon-xl {
+    transform: scale(1.6);
+}
+
+.icon-md {
+    transform: scale(1.2);
+}
+
+.icon-sm {
+    transform: scale(0.9);
+}
 
 /* --- Home page positions (spread across full area) --- */
-.icon-1  { top: 8%;  left: 82%; animation-delay: 0s; }        /* WordPress - BIG */
-.icon-2  { top: 82%; left: 35%; animation-delay: 1s; }        /* JS - BIG */
-.icon-3  { top: 12%; left: 20%; animation-delay: 2s; }        /* Python - BIG */
-.icon-4  { top: 5%;  left: 52%; animation-delay: 0.5s; }      /* React - BIG */
-.icon-5  { top: 87%; left: 85%; animation-delay: 3s; }        /* HTML5 - MEDIUM */
-.icon-6  { top: 55%; left: 90%; animation-delay: 1.5s; }      /* CSS3 - MEDIUM */
-.icon-7  { top: 40%; left: 5%;  animation-delay: 2.5s; }      /* Node.js - MEDIUM */
-.icon-8  { top: 68%; left: 12%; animation-delay: 4s; }        /* Figma - SMALL */
-.icon-9  { top: 92%; left: 62%; animation-delay: 0.8s; }      /* Git - SMALL */
-.icon-10 { top: 5%;  left: 5%;  animation-delay: 1.8s; }      /* Docker - SMALL */
-.icon-11 { top: 30%; left: 88%; animation-delay: 3.5s; }      /* Claude - SMALL */
+.icon-1 {
+    top: 8%;
+    left: 82%;
+    animation-delay: 0s;
+}
+
+/* WordPress - BIG */
+.icon-2 {
+    top: 82%;
+    left: 35%;
+    animation-delay: 1s;
+}
+
+/* JS - BIG */
+.icon-3 {
+    top: 12%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+/* Python - BIG */
+.icon-4 {
+    top: 5%;
+    left: 52%;
+    animation-delay: 0.5s;
+}
+
+/* React - BIG */
+.icon-5 {
+    top: 87%;
+    left: 85%;
+    animation-delay: 3s;
+}
+
+/* HTML5 - MEDIUM */
+.icon-6 {
+    top: 55%;
+    left: 90%;
+    animation-delay: 1.5s;
+}
+
+/* CSS3 - MEDIUM */
+.icon-7 {
+    top: 40%;
+    left: 5%;
+    animation-delay: 2.5s;
+}
+
+/* Node.js - MEDIUM */
+.icon-8 {
+    top: 68%;
+    left: 12%;
+    animation-delay: 4s;
+}
+
+/* Figma - SMALL */
+.icon-9 {
+    top: 92%;
+    left: 62%;
+    animation-delay: 0.8s;
+}
+
+/* Git - SMALL */
+.icon-10 {
+    top: 5%;
+    left: 5%;
+    animation-delay: 1.8s;
+}
+
+/* Docker - SMALL */
+.icon-11 {
+    top: 30%;
+    left: 88%;
+    animation-delay: 3.5s;
+}
+
+/* Claude - SMALL */
 
 /* --- Scattered positions (when not on home page) --- */
-.floating-icons.scattered .icon-1  { top: 2%;  left: 95%; }            /* WordPress: up-right */
-.floating-icons.scattered .icon-2  { top: 95%; left: 15%; }            /* JS: down-left */
-.floating-icons.scattered .icon-3  { top: 2%;  left: 2%; }             /* Python: up-left */
-.floating-icons.scattered .icon-4  { top: 2%;  left: 75%; }            /* React: up-right */
-.floating-icons.scattered .icon-5  { top: 95%; left: 95%; }            /* HTML5: down-right */
-.floating-icons.scattered .icon-6  { top: 60%; left: 97%; }            /* CSS3: right edge */
-.floating-icons.scattered .icon-7  { top: 45%; left: 1%; }             /* Node.js: left edge */
-.floating-icons.scattered .icon-8  { top: 95%; left: 1%; }             /* Figma: down-left */
-.floating-icons.scattered .icon-9  { top: 95%; left: 78%; }            /* Git: down */
-.floating-icons.scattered .icon-10 { top: 2%;  left: 25%; }            /* Docker: up-left */
-.floating-icons.scattered .icon-11 { top: 75%; left: 97%; }            /* Claude: right edge */
+.floating-icons.scattered .icon-1 {
+    top: 2%;
+    left: 95%;
+}
+
+/* WordPress: up-right */
+.floating-icons.scattered .icon-2 {
+    top: 95%;
+    left: 15%;
+}
+
+/* JS: down-left */
+.floating-icons.scattered .icon-3 {
+    top: 2%;
+    left: 2%;
+}
+
+/* Python: up-left */
+.floating-icons.scattered .icon-4 {
+    top: 2%;
+    left: 75%;
+}
+
+/* React: up-right */
+.floating-icons.scattered .icon-5 {
+    top: 95%;
+    left: 95%;
+}
+
+/* HTML5: down-right */
+.floating-icons.scattered .icon-6 {
+    top: 60%;
+    left: 97%;
+}
+
+/* CSS3: right edge */
+.floating-icons.scattered .icon-7 {
+    top: 45%;
+    left: 1%;
+}
+
+/* Node.js: left edge */
+.floating-icons.scattered .icon-8 {
+    top: 95%;
+    left: 1%;
+}
+
+/* Figma: down-left */
+.floating-icons.scattered .icon-9 {
+    top: 95%;
+    left: 78%;
+}
+
+/* Git: down */
+.floating-icons.scattered .icon-10 {
+    top: 2%;
+    left: 25%;
+}
+
+/* Docker: up-left */
+.floating-icons.scattered .icon-11 {
+    top: 75%;
+    left: 97%;
+}
+
+/* Claude: right edge */
 
 /* --- About page: scattered cluster below photo --- */
-.floating-icons.scattered.on-about .icon-1  { top: 65%; left: 12%; }  /* WordPress */
-.floating-icons.scattered.on-about .icon-2  { top: 78%; left: 8%; }   /* JS */
-.floating-icons.scattered.on-about .icon-3  { top: 88%; left: 15%; }  /* Python */
-.floating-icons.scattered.on-about .icon-4  { top: 70%; left: 22%; }  /* React */
-.floating-icons.scattered.on-about .icon-5  { top: 82%; left: 25%; }  /* HTML5 */
-.floating-icons.scattered.on-about .icon-6  { top: 92%; left: 20%; }  /* CSS3 */
-.floating-icons.scattered.on-about .icon-7  { top: 75%; left: 5%; }   /* Node.js */
-.floating-icons.scattered.on-about .icon-8  { top: 85%; left: 30%; }  /* Figma */
-.floating-icons.scattered.on-about .icon-9  { top: 68%; left: 17%; }  /* Git */
-.floating-icons.scattered.on-about .icon-10 { top: 95%; left: 10%; }  /* Docker */
-.floating-icons.scattered.on-about .icon-11 { top: 92%; left: 28%; }  /* Claude */
+.floating-icons.scattered.on-about .icon-1 {
+    top: 65%;
+    left: 12%;
+}
+
+/* WordPress */
+.floating-icons.scattered.on-about .icon-2 {
+    top: 78%;
+    left: 8%;
+}
+
+/* JS */
+.floating-icons.scattered.on-about .icon-3 {
+    top: 88%;
+    left: 15%;
+}
+
+/* Python */
+.floating-icons.scattered.on-about .icon-4 {
+    top: 70%;
+    left: 22%;
+}
+
+/* React */
+.floating-icons.scattered.on-about .icon-5 {
+    top: 82%;
+    left: 25%;
+}
+
+/* HTML5 */
+.floating-icons.scattered.on-about .icon-6 {
+    top: 92%;
+    left: 20%;
+}
+
+/* CSS3 */
+.floating-icons.scattered.on-about .icon-7 {
+    top: 75%;
+    left: 5%;
+}
+
+/* Node.js */
+.floating-icons.scattered.on-about .icon-8 {
+    top: 85%;
+    left: 30%;
+}
+
+/* Figma */
+.floating-icons.scattered.on-about .icon-9 {
+    top: 68%;
+    left: 17%;
+}
+
+/* Git */
+.floating-icons.scattered.on-about .icon-10 {
+    top: 95%;
+    left: 10%;
+}
+
+/* Docker */
+.floating-icons.scattered.on-about .icon-11 {
+    top: 92%;
+    left: 28%;
+}
+
+/* Claude */
 
 .floating-icons.scattered .float-icon {
     opacity: 0.35;
 }
 
-.floating-icons.scattered .icon-xl { transform: scale(1.1); }
-.floating-icons.scattered .icon-md { transform: scale(0.85); }
-.floating-icons.scattered .icon-sm { transform: scale(0.65); }
+.floating-icons.scattered .icon-xl {
+    transform: scale(1.1);
+}
+
+.floating-icons.scattered .icon-md {
+    transform: scale(0.85);
+}
+
+.floating-icons.scattered .icon-sm {
+    transform: scale(0.65);
+}
 
 .floating-icons.scattered .float-icon:hover {
     opacity: 0.7;
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    25% { transform: translateY(-12px) rotate(2deg); }
-    50% { transform: translateY(-5px) rotate(-1deg); }
-    75% { transform: translateY(-15px) rotate(1deg); }
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-12px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(-1deg);
+    }
+
+    75% {
+        transform: translateY(-15px) rotate(1deg);
+    }
 }
 
 
@@ -337,8 +557,15 @@ body {
 }
 
 @keyframes botBounce {
-    0%, 100% { transform: rotate(-5deg) translateY(0); }
-    50% { transform: rotate(-5deg) translateY(-8px); }
+
+    0%,
+    100% {
+        transform: rotate(-5deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-5deg) translateY(-8px);
+    }
 }
 
 .code-block {
@@ -348,7 +575,7 @@ body {
     padding: 30px 40px;
     display: inline-block;
     text-align: left;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
     position: relative;
 }
 
@@ -459,7 +686,7 @@ body {
 }
 
 .project-row:hover {
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     transform: translateY(-3px);
     border-color: var(--accent);
 }
@@ -771,7 +998,7 @@ body {
         justify-content: space-around;
         padding: 0 10px;
         border-top: 1px solid #eee;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
         z-index: 1000;
     }
 
@@ -850,7 +1077,10 @@ body {
         display: none;
     }
 
-    .icon-1, .icon-2, .icon-3, .icon-4 {
+    .icon-1,
+    .icon-2,
+    .icon-3,
+    .icon-4 {
         display: block;
     }
 
@@ -858,9 +1088,15 @@ body {
         font-size: 28px;
     }
 
+    .project-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
     .project-img {
-        width: 220px;
-        min-width: 220px;
+        width: 100%;
+        min-width: 0;
     }
 
     .about-content {

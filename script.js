@@ -2,7 +2,7 @@
 // PORTFOLIO - Navigation & Interactions
 // ============================================
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     // --- Page Navigation ---
     var navLinks = document.querySelectorAll('.nav-link');
@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showPage(pageId) {
         // Hide all pages
-        pages.forEach(function(page) {
+        pages.forEach(function (page) {
             page.classList.remove('active');
         });
 
         // Remove active from nav
-        navLinks.forEach(function(link) {
+        navLinks.forEach(function (link) {
             link.classList.remove('active');
         });
 
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (pageId === 'about') {
                 floatingIconsContainer.classList.add('scattered', 'on-about');
                 console.log('ABOUT PAGE: Moving ' + allIcons.length + ' icons');
-                allIcons.forEach(function(icon, i) {
+                allIcons.forEach(function (icon, i) {
                     if (aboutPos[i]) {
                         icon.style.setProperty('top', aboutPos[i].top, 'important');
                         icon.style.setProperty('left', aboutPos[i].left, 'important');
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             } else {
                 // Clear inline positions so CSS takes over
-                allIcons.forEach(function(icon) {
+                allIcons.forEach(function (icon) {
                     icon.style.top = '';
                     icon.style.left = '';
                 });
@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             var page = this.getAttribute('data-page');
             if (page) {
@@ -89,8 +89,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // "Read more" and internal links
-    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
             var href = this.getAttribute('href');
             if (href === '#') return;
 
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Also update nav if it matches
                 var matchingNav = document.querySelector('[data-page="' + targetId + '"]');
                 if (matchingNav) {
-                    navLinks.forEach(function(l) { l.classList.remove('active'); });
+                    navLinks.forEach(function (l) { l.classList.remove('active'); });
                     matchingNav.classList.add('active');
                 }
             }
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Handle browser back/forward
-    window.addEventListener('popstate', function() {
+    window.addEventListener('popstate', function () {
         var hash = window.location.hash.substring(1) || 'home';
         showPage(hash);
     });
@@ -128,19 +128,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var form = document.getElementById('contactForm');
     if (form) {
         // Clear validation state when user types
-        form.querySelectorAll('[required]').forEach(function(field) {
-            field.addEventListener('input', function() {
+        form.querySelectorAll('[required]').forEach(function (field) {
+            field.addEventListener('input', function () {
                 if (this.value.trim()) this.style.borderColor = '';
             });
         });
 
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
 
             // Validate required fields
             var required = form.querySelectorAll('[required]');
             var valid = true;
-            required.forEach(function(field) {
+            required.forEach(function (field) {
                 if (!field.value.trim()) {
                     field.style.borderColor = '#e74c3c';
                     valid = false;
@@ -162,42 +162,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 headers: { 'Accept': 'application/json' },
                 body: new FormData(form)
             })
-            .then(function(response) {
-                if (response.ok) {
-                    btn.innerHTML = '&#10003; Message Sent!';
-                    btn.style.background = '#27ae60';
+                .then(function (response) {
+                    if (response.ok) {
+                        btn.innerHTML = '&#10003; Message Sent!';
+                        btn.style.background = '#27ae60';
+                        btn.style.opacity = '1';
+                        form.reset();
+                        setTimeout(function () {
+                            btn.innerHTML = originalText;
+                            btn.style.background = '';
+                            btn.disabled = false;
+                        }, 3000);
+                    } else {
+                        return response.json().then(function (data) { throw data; });
+                    }
+                })
+                .catch(function () {
+                    btn.innerHTML = '&#10007; Failed &mdash; try again';
+                    btn.style.background = '#e74c3c';
                     btn.style.opacity = '1';
-                    form.reset();
-                    setTimeout(function() {
+                    btn.disabled = false;
+                    setTimeout(function () {
                         btn.innerHTML = originalText;
                         btn.style.background = '';
-                        btn.disabled = false;
                     }, 3000);
-                } else {
-                    return response.json().then(function(data) { throw data; });
-                }
-            })
-            .catch(function() {
-                btn.innerHTML = '&#10007; Failed &mdash; try again';
-                btn.style.background = '#e74c3c';
-                btn.style.opacity = '1';
-                btn.disabled = false;
-                setTimeout(function() {
-                    btn.innerHTML = originalText;
-                    btn.style.background = '';
-                }, 3000);
-            });
+                });
         });
     }
 
     // --- Floating icon parallax on mouse move ---
     var floatingIcons = document.querySelectorAll('.float-icon');
 
-    document.addEventListener('mousemove', function(e) {
+    document.addEventListener('mousemove', function (e) {
         var x = (e.clientX / window.innerWidth - 0.5) * 2;
         var y = (e.clientY / window.innerHeight - 0.5) * 2;
 
-        floatingIcons.forEach(function(icon, i) {
+        floatingIcons.forEach(function (icon, i) {
             var speed = (i + 1) * 3;
             var moveX = x * speed;
             var moveY = y * speed;
@@ -207,20 +207,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Typing effect for code block ---
     var codeLines = document.querySelectorAll('.code-line');
-    codeLines.forEach(function(line, i) {
+    codeLines.forEach(function (line, i) {
         line.style.opacity = '0';
         line.style.transform = 'translateX(-20px)';
         line.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
 
-        setTimeout(function() {
+        setTimeout(function () {
             line.style.opacity = '1';
             line.style.transform = 'translateX(0)';
         }, 300 + (i * 200));
     });
 
     // --- Project cards stagger animation ---
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.project-card').forEach(function(card, i) {
+    document.querySelectorAll('.project-row').forEach(function (card, i) {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
         card.style.transition = 'opacity 0.6s ease ' + (i * 0.15) + 's, transform 0.6s ease ' + (i * 0.15) + 's';

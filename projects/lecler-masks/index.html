@@ -2303,7 +2303,34 @@
                     image: 'img/product-spf.svg',
                     tags: ['Apsauga', 'Lengvas', 'Nejutrimas'],
                     badge: 'Naujiena',
-                    badgeClass: 'badge-new'
+                    badgeClass: 'badge-new',
+                    desc: "Ypač lengvos tekstūros SPF apsauga, kuri nepalieka balto sluoksnio ir intensyviai drėkina.",
+                    howToUse: "Paskutinis žingsnis ryto rutinoje. Naudokite gausiai."
+                },
+                {
+                    id: 'express-glow',
+                    name: "Lecler EXPRESS-GLOW šviesinanti lakštinė kaukė",
+                    category: 'mask',
+                    priceLabel: "nuo 10,95 €",
+                    priceMin: 10.95,
+                    image: 'img/product-rose.svg', // Placeholder
+                    tags: ['Šviesinimas', 'Energija', 'Vitaminas C'],
+                    badge: 'Naujiena',
+                    badgeClass: 'badge-new',
+                    optionsKey: "Lecler EXPRESS-GLOW šviesinanti lakštinė kaukė",
+                    desc: "Akimirksniu suteikia pavargusiai odai energijos ir sveiko spindesio. Puikiai tinka prieš svarbius renginius.",
+                    howToUse: "Naudokite 15-20 minučių. Likusį serumą švelniai įtapšnokite į veido ir kaklo odą."
+                },
+                {
+                    id: 'matrixyl-3000',
+                    name: "Timeless™ Matrixyl® 3000 stangrinantis serumas",
+                    category: 'serum',
+                    priceLabel: "36,95 €",
+                    priceMin: 36.95,
+                    image: 'img/synthe-serum.png', // Placeholder
+                    tags: ['Peptidai', 'Stangrumas', 'Raukšlelės'],
+                    desc: "Galingas matrikino peptidų kompleksas, kuris skatina odos regeneraciją ir mažina raukšlių gylį.",
+                    howToUse: "Tepkite 2-3 lašus ryte ir vakare ant nuvalytos odos."
                 }
             ];
 
@@ -2328,6 +2355,10 @@
                 "Lecler ROSE PETAL rožių vandens drėkinanti lakštinė kaukė": [
                     { label: "1 vnt.", price: 9.95 },
                     { label: "3 vnt. (rinkinys)", price: 29.95 }
+                ],
+                "Lecler EXPRESS-GLOW šviesinanti lakštinė kaukė": [
+                    { label: "1 vnt.", price: 10.95 },
+                    { label: "5 vnt. (rinkinys)", price: 34.95 }
                 ]
             };
 
@@ -2518,10 +2549,6 @@
                 else if (btn.dataset.action === 'remove') removeFromCart(index);
             });
 
-            // Initial render
-            renderProducts();
-            updateCartUI();
-
             // Scroll reveal
             const revealObserver = new IntersectionObserver(function (entries) {
                 entries.forEach(function (entry) {
@@ -2553,6 +2580,10 @@
                     });
                 });
             }
+
+            // Initial render
+            renderProducts();
+            updateCartUI();
         })();
     </script>
 </body>
