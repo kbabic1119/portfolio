@@ -1,0 +1,137 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Rose Gold Gradient -->
+    <linearGradient id="roseGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5D0C9;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E8A498;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D48575;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Pink Rose Gradient -->
+    <linearGradient id="rosePink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FF69B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DB7093;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Bottle Gradient -->
+    <linearGradient id="bottleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF0F3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE4E8;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Cap Gold Gradient -->
+    <linearGradient id="capGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4B96A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C5A55A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8954A;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Soft Shadow -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    
+    <!-- Glow Effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background with Soft Gradient -->
+  <rect width="500" height="500" fill="#FFF8FA"/>
+  <circle cx="250" cy="250" r="200" fill="url(#rosePink)" opacity="0.05"/>
+  
+  <!-- Decorative Rose Petals Background -->
+  <ellipse cx="100" cy="120" rx="45" ry="28" fill="url(#rosePink)" opacity="0.15" transform="rotate(-25 100 120)"/>
+  <ellipse cx="400" cy="150" rx="38" ry="24" fill="url(#rosePink)" opacity="0.12" transform="rotate(35 400 150)"/>
+  <ellipse cx="380" cy="380" rx="42" ry="26" fill="url(#rosePink)" opacity="0.1" transform="rotate(-15 380 380)"/>
+  <ellipse cx="120" cy="400" rx="35" ry="22" fill="url(#rosePink)" opacity="0.13" transform="rotate(50 120 400)"/>
+  
+  <!-- Product Shadow Base -->
+  <ellipse cx="250" cy="410" rx="80" ry="18" fill="#E8A498" opacity="0.25"/>
+  
+  <!-- Main Bottle Body -->
+  <rect x="175" y="180" width="150" height="210" rx="20" fill="url(#bottleGrad)" filter="url(#softShadow)"/>
+  
+  <!-- Bottle Shoulder -->
+  <path d="M 175 200 L 175 185 Q 175 165 200 165 L 300 165 Q 325 165 325 185 L 325 200" fill="url(#bottleGrad)"/>
+  
+  <!-- Bottle Neck -->
+  <rect x="195" y="135" width="110" height="35" fill="url(#bottleGrad)"/>
+  
+  <!-- Luxury Gold Cap -->
+  <rect x="188" y="85" width="124" height="55" rx="6" fill="url(#capGold)" filter="url(#softShadow)"/>
+  <rect x="188" y="85" width="124" height="18" rx="4" fill="#E5C985"/>
+  <rect x="195" y="92" width="110" height="8" rx="3" fill="#F5D79A" opacity="0.6"/>
+  
+  <!-- Cap Detail Lines -->
+  <line x1="200" y1="110" x2="300" y2="110" stroke="#B8954A" stroke-width="1" opacity="0.4"/>
+  <line x1="200" y1="118" x2="300" y2="118" stroke="#B8954A" stroke-width="1" opacity="0.4"/>
+  <line x1="200" y1="126" x2="300" y2="126" stroke="#B8954A" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Premium Label -->
+  <rect x="190" y="220" width="120" height="140" rx="10" fill="#FFFFFF" opacity="0.95" filter="url(#softShadow)"/>
+  
+  <!-- LECLER Brand Name -->
+  <text x="250" y="255" font-family="'Playfair Display', Georgia, serif" font-size="18" fill="#C5A55A" text-anchor="middle" font-weight="700" letter-spacing="4">LECLER</text>
+  
+  <!-- Decorative Line -->
+  <line x1="210" y1="268" x2="290" y2="268" stroke="#D4B96A" stroke-width="1.5" opacity="0.5"/>
+  
+  <!-- Product Name -->
+  <text x="250" y="295" font-family="'Playfair Display', Georgia, serif" font-size="14" fill="#D48575" text-anchor="middle" font-weight="600" letter-spacing="2">ROSE PETAL</text>
+  
+  <!-- Product Type -->
+  <text x="250" y="320" font-family="Arial, sans-serif" font-size="9" fill="#999" text-anchor="middle" letter-spacing="1">HYDRATING FACE MASK</text>
+  
+  <!-- Rose Water Badge -->
+  <circle cx="250" cy="345" r="25" stroke="#E8A498" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <text x="250" y="343" font-family="Arial, sans-serif" font-size="7" fill="#D48575" text-anchor="middle" font-weight="600">ROSE</text>
+  <text x="250" y="353" font-family="Arial, sans-serif" font-size="7" fill="#D48575" text-anchor="middle" font-weight="600">WATER</text>
+  
+  <!-- Volume -->
+  <text x="250" y="375" font-family="Arial, sans-serif" font-size="8" fill="#AAA" text-anchor="middle">25ml × 10</text>
+  
+  <!-- 3D Rose Flower Decoration -->
+  <g transform="translate(340, 240)" filter="url(#glow)">
+    <!-- Outer Petals -->
+    <ellipse cx="0" cy="0" rx="35" ry="22" fill="url(#rosePink)" opacity="0.7" transform="rotate(0)"/>
+    <ellipse cx="0" cy="0" rx="35" ry="22" fill="url(#rosePink)" opacity="0.7" transform="rotate(45)"/>
+    <ellipse cx="0" cy="0" rx="35" ry="22" fill="url(#rosePink)" opacity="0.7" transform="rotate(90)"/>
+    <ellipse cx="0" cy="0" rx="35" ry="22" fill="url(#rosePink)" opacity="0.7" transform="rotate(135)"/>
+    <!-- Inner Petals -->
+    <ellipse cx="0" cy="0" rx="25" ry="16" fill="url(#rosePink)" opacity="0.85" transform="rotate(22.5)"/>
+    <ellipse cx="0" cy="0" rx="25" ry="16" fill="url(#rosePink)" opacity="0.85" transform="rotate(67.5)"/>
+    <ellipse cx="0" cy="0" rx="25" ry="16" fill="url(#rosePink)" opacity="0.85" transform="rotate(112.5)"/>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="12" fill="url(#roseGold)" opacity="0.9"/>
+    <circle cx="0" cy="0" r="6" fill="#E8A498"/>
+  </g>
+  
+  <!-- Floating Rose Petals -->
+  <ellipse cx="80" cy="200" rx="18" ry="12" fill="url(#rosePink)" opacity="0.5" transform="rotate(-30 80 200)"/>
+  <ellipse cx="420" cy="280" rx="15" ry="10" fill="url(#rosePink)" opacity="0.4" transform="rotate(45 420 280)"/>
+  <ellipse cx="90" cy="350" rx="16" ry="11" fill="url(#rosePink)" opacity="0.45" transform="rotate(-60 90 350)"/>
+  
+  <!-- Sparkles & Glow Points -->
+  <circle cx="380" cy="120" r="3" fill="#FFD700" opacity="0.8" filter="url(#glow)"/>
+  <circle cx="400" cy="130" r="2" fill="#FFD700" opacity="0.6"/>
+  <circle cx="100" cy="380" r="2.5" fill="#FFD700" opacity="0.7" filter="url(#glow)"/>
+  <circle cx="420" cy="360" r="2" fill="#FFD700" opacity="0.5"/>
+  <circle cx="150" cy="100" r="2" fill="#FFD700" opacity="0.6"/>
+  
+  <!-- Premium Quality Badge -->
+  <circle cx="140" cy="380" r="28" fill="url(#capGold)" filter="url(#softShadow)"/>
+  <circle cx="140" cy="380" r="24" fill="#FFF8F0"/>
+  <text x="140" y="375" font-family="Arial, sans-serif" font-size="9" fill="#C5A55A" text-anchor="middle" font-weight="700">PREMIUM</text>
+  <text x="140" y="387" font-family="Arial, sans-serif" font-size="9" fill="#C5A55A" text-anchor="middle" font-weight="700">QUALITY</text>
+  
+  <!-- Light Rays Effect -->
+  <line x1="250" y1="50" x2="250" y2="80" stroke="#FFF" stroke-width="2" opacity="0.4"/>
+  <line x1="250" y1="420" x2="250" y2="450" stroke="#FFF" stroke-width="2" opacity="0.3"/>
+</svg>

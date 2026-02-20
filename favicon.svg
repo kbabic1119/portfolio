@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="fc">
+      <circle cx="32" cy="32" r="32"/>
+    </clipPath>
+  </defs>
+  <!-- x="-8" crops 10% from each side (80% of width shown, centered)
+       y="-4" starts at ~4% from top
+       width="80" height="96" zooms so we see hair-to-chin (3%–71% of original) -->
+  <image href="photo.jpeg" x="-8" y="-4" width="80" height="96" clip-path="url(#fc)"/>
+</svg>

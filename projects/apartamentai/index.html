@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palangos Apartamentai - Jaukūs apartamentai prie jūros</title>
+    <meta name="description" content="Modernūs ir jaukūs apartamentai Palangoje. Puiki vieta poilsiui prie Baltijos jūros.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #f5f0e8;
+            --beige-light: #faf7f2;
+            --gold: #b8965a;
+            --gold-dark: #9a7d4a;
+            --dark: #2c2c2c;
+            --text: #444444;
+            --text-light: #888888;
+            --white: #ffffff;
+            --border: #e8e2d8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 75px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span { color: var(--gold); }
+
+        .nav-main {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-main a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-main a:hover { color: var(--gold); }
+
+        .nav-cta {
+            background: var(--gold);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            transition: background 0.3s !important;
+        }
+
+        .nav-cta:hover { background: var(--gold-dark) !important; }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #8B7355 0%, #6B5B45 30%, #4A4035 60%, #3B3530 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(184, 150, 90, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            padding: 0 30px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.9);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: white;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        /* ===== BOOKING FORM ===== */
+        .booking-bar {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px 30px;
+            display: flex;
+            gap: 16px;
+            align-items: end;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .booking-field {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .booking-field label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .booking-field input, .booking-field select {
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--dark);
+            font-family: inherit;
+            background: var(--beige-light);
+        }
+
+        .booking-field input:focus, .booking-field select:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .booking-btn {
+            padding: 12px 32px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+
+        .booking-btn:hover { background: var(--gold-dark); }
+
+        /* ===== ABOUT ===== */
+        .about {
+            padding: 90px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1rem;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            aspect-ratio: 4/3;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #d4c5a9 0%, #b8a88a 50%, #9c8e72 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 3rem;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .about-text p {
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+
+        /* ===== APARTMENTS ===== */
+        .apartments {
+            padding: 90px 30px;
+            background: var(--beige-light);
+        }
+
+        .apartments-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .apt-card {
+            background: var(--white);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .apt-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .apt-img {
+            aspect-ratio: 16/10;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apt-img-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .apt-img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .apt-img-placeholder:nth-child(1) { background: linear-gradient(135deg, #c9b896, #a89070); }
+
+        .apt-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--gold);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .apt-details {
+            padding: 22px;
+        }
+
+        .apt-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .apt-details p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+
+        .apt-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .apt-meta span { display: flex; align-items: center; gap: 4px; }
+
+        .apt-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .apt-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .apt-price small {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .apt-btn {
+            padding: 10px 22px;
+            border: 1.5px solid var(--dark);
+            color: var(--dark);
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .apt-btn:hover {
+            background: var(--dark);
+            color: white;
+        }
+
+        /* ===== FEATURES ===== */
+        .features {
+            padding: 80px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 30px 20px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 16px;
+            background: var(--beige);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h4 {
+            font-size: 0.95rem;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .feature-item p {
+            font-size: 0.82rem;
+            color: var(--text-light);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            padding: 90px 30px;
+            background: var(--beige-light);
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            margin-bottom: 14px;
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .contact-form button {
+            padding: 14px 36px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: inherit;
+        }
+
+        .contact-form button:hover { background: var(--gold-dark); }
+
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-card h4 {
+            font-size: 0.9rem;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .contact-card p {
+            font-size: 0.88rem;
+            color: var(--text-light);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 50px 30px 25px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-inner span {
+            font-size: 0.83rem;
+        }
+
+        .footer-inner a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.83rem;
+        }
+
+        .footer-inner a:hover { text-decoration: underline; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-main { display: none; }
+            .hamburger { display: flex; }
+
+            .hero { height: 70vh; min-height: 480px; }
+            .hero h1 { font-size: 2.4rem; }
+
+            .booking-bar {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .about-grid { grid-template-columns: 1fr; gap: 30px; }
+            .apartments-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.9rem; }
+            .features-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">PALANGOS <span>APARTAMENTAI</span></a>
+            <ul class="nav-main">
+                <li><a href="#about">Apie mus</a></li>
+                <li><a href="#apartments">Apartamentai</a></li>
+                <li><a href="#features">Paslaugos</a></li>
+                <li><a href="#contact">Kontaktai</a></li>
+                <li><a href="#contact" class="nav-cta">Rezervuoti</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Palanga · Baltijos jūra</span>
+            <h1>Jaukūs apartamentai prie jūros</h1>
+            <p>Modernūs ir stilingai įrengti apartamentai vos kelių minučių atstumu nuo Palangos paplūdimio ir Basanavičiaus gatvės.</p>
+
+            <div class="booking-bar">
+                <div class="booking-field">
+                    <label>Atvykimas</label>
+                    <input type="date" value="2026-07-01">
+                </div>
+                <div class="booking-field">
+                    <label>Išvykimas</label>
+                    <input type="date" value="2026-07-05">
+                </div>
+                <div class="booking-field">
+                    <label>Svečiai</label>
+                    <select>
+                        <option>2 svečiai</option>
+                        <option>3 svečiai</option>
+                        <option>4 svečiai</option>
+                        <option>5+ svečiai</option>
+                    </select>
+                </div>
+                <button class="booking-btn">Ieškoti</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-image">🏠</div>
+            <div class="about-text">
+                <h3>Apie mus</h3>
+                <p>Palangos Apartamentai siūlo aukštos kokybės apgyvendinimo paslaugas jaukiuose apartamentuose, esančiuose geriausiose Palangos vietose. Mūsų svečiai gali mėgautis komfortu ir ramybe.</p>
+                <p>Visi apartamentai yra visiškai įrengti su modernia buitine technika, švariu patalynės komplektu ir nemokamu Wi-Fi. Esame vos kelių minučių atstumu nuo jūros, Basanavičiaus gatvės ir geriausių Palangos restoranų.</p>
+                <p>Mūsų komanda visada pasiruošusi padėti jums susiplanuoti tobulą atostogas Palangoje.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartments -->
+    <section class="apartments" id="apartments">
+        <div class="section-header">
+            <h2>Mūsų apartamentai</h2>
+            <p>Pasirinkite geriausiai jums tinkantį apartamentą Palangoje</p>
+        </div>
+
+        <div class="apartments-grid">
+            <div class="apt-card">
+                <div class="apt-img">
+                    <div class="apt-img-placeholder" style="background: linear-gradient(135deg, #c9b896, #a89070);">🛏️</div>
+                    <span class="apt-badge">Populiariausias</span>
+                </div>
+                <div class="apt-details">
+                    <h3>Jūros apartamentai</h3>
+                    <p>Erdvūs apartamentai su vaizdu į jūrą, balkonas, pilnai įrengta virtuvė.</p>
+                    <div class="apt-meta">
+                        <span>👥 2-4 svečiai</span>
+                        <span>📐 55 m²</span>
+                        <span>🛏️ 2 kambariai</span>
+                    </div>
+                    <div class="apt-footer">
+                        <span class="apt-price">85 € <small>/naktis</small></span>
+                        <a href="#contact" class="apt-btn">Peržiūrėti</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apt-card">
+                <div class="apt-img">
+                    <div class="apt-img-placeholder" style="background: linear-gradient(135deg, #b8a588, #967b5d);">🌊</div>
+                </div>
+                <div class="apt-details">
+                    <h3>Pušyno apartamentai</h3>
+                    <p>Jaukūs apartamentai ramioje vietoje, šalia pušyno ir dviračių tako.</p>
+                    <div class="apt-meta">
+                        <span>👥 2-3 svečiai</span>
+                        <span>📐 42 m²</span>
+                        <span>🛏️ 1 kambarys</span>
+                    </div>
+                    <div class="apt-footer">
+                        <span class="apt-price">65 € <small>/naktis</small></span>
+                        <a href="#contact" class="apt-btn">Peržiūrėti</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apt-card">
+                <div class="apt-img">
+                    <div class="apt-img-placeholder" style="background: linear-gradient(135deg, #d4c5a0, #b5a47e);">✨</div>
+                    <span class="apt-badge">Nauja</span>
+                </div>
+                <div class="apt-details">
+                    <h3>Liuksas su terasa</h3>
+                    <p>Premium apartamentai su privačia terasa, jacuzzi ir panoraminiu vaizdu.</p>
+                    <div class="apt-meta">
+                        <span>👥 2-6 svečiai</span>
+                        <span>📐 80 m²</span>
+                        <span>🛏️ 3 kambariai</span>
+                    </div>
+                    <div class="apt-footer">
+                        <span class="apt-price">130 € <small>/naktis</small></span>
+                        <a href="#contact" class="apt-btn">Peržiūrėti</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apt-card">
+                <div class="apt-img">
+                    <div class="apt-img-placeholder" style="background: linear-gradient(135deg, #c4b28e, #a08a68);">🌅</div>
+                </div>
+                <div class="apt-details">
+                    <h3>Studija centro</h3>
+                    <p>Kompaktiška studija pačiame Palangos centre, idealiai tinka poroms.</p>
+                    <div class="apt-meta">
+                        <span>👥 2 svečiai</span>
+                        <span>📐 30 m²</span>
+                        <span>🛏️ Studija</span>
+                    </div>
+                    <div class="apt-footer">
+                        <span class="apt-price">50 € <small>/naktis</small></span>
+                        <a href="#contact" class="apt-btn">Peržiūrėti</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2>Ką mes siūlome</h2>
+            <p>Viskas, ko reikia puikioms atostogoms</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">📶</div>
+                <h4>Nemokamas Wi-Fi</h4>
+                <p>Greitas internetas visuose apartamentuose</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🅿️</div>
+                <h4>Parkavimas</h4>
+                <p>Nemokama stovėjimo vieta kiekvienam svečiui</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🍳</div>
+                <h4>Pilna virtuvė</h4>
+                <p>Visa reikalinga buitinė technika ir indai</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🚿</div>
+                <h4>Švaros komplektai</h4>
+                <p>Švari patalynė ir rankšluosčiai</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🚲</div>
+                <h4>Dviračiai</h4>
+                <p>Dviračių nuoma vietoje</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🏖️</div>
+                <h4>Arti jūros</h4>
+                <p>5 min. pėsčiomis iki paplūdimio</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <h2>Susisiekite su mumis</h2>
+            <p>Turite klausimų ar norite rezervuoti? Parašykite mums!</p>
+        </div>
+
+        <div class="contact-grid">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Ačiū! Susisieksime su jumis netrukus.');">
+                <input type="text" placeholder="Jūsų vardas" required>
+                <input type="email" placeholder="El. paštas" required>
+                <input type="tel" placeholder="Telefonas">
+                <textarea rows="5" placeholder="Jūsų žinutė..." required></textarea>
+                <button type="submit">Siųsti žinutę</button>
+            </form>
+
+            <div class="contact-info-cards">
+                <div class="contact-card">
+                    <h4>📍 Adresas</h4>
+                    <p>Basanavičiaus g. 24, Palanga, Lietuva</p>
+                </div>
+                <div class="contact-card">
+                    <h4>📞 Telefonas</h4>
+                    <p>+370 600 12345</p>
+                </div>
+                <div class="contact-card">
+                    <h4>✉️ El. paštas</h4>
+                    <p>info@palangosapartamentai.lt</p>
+                </div>
+                <div class="contact-card">
+                    <h4>🕐 Darbo laikas</h4>
+                    <p>I-VII: 8:00 - 20:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <span>&copy; 2026 Palangos Apartamentai. Visos teisės saugomos.</span>
+            <a href="../../index.html">&larr; Grįžti į Portfolio</a>
+        </div>
+    </footer>
+</body>
+
+</html>

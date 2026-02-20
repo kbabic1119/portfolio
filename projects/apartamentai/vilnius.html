@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Apartamentai | Vilnius</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Inter:wght@300;400&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold-text {
+            color: #d4af37;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('YOUR_IMAGE_URL');
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="fixed w-full z-50 px-10 py-6 flex justify-between items-center bg-transparent backdrop-blur-sm">
+        <div class="text-2xl font-bold tracking-widest uppercase">Apartamentai</div>
+        <div class="space-x-8 text-sm uppercase tracking-widest">
+            <a href="#rooms" class="hover:text-amber-500 transition">Rooms</a>
+            <a href="#amenities" class="hover:text-amber-500 transition">Amenities</a>
+            <a href="#contact" class="px-5 py-2 border border-white hover:bg-white hover:text-black transition">Book
+                Now</a>
+        </div>
+    </nav>
+
+    <header class="h-screen flex items-center justify-center text-center hero-bg">
+        <div>
+            <h1 class="text-6xl md:text-8xl mb-4">Elite Stay in Vilnius</h1>
+            <p class="text-xl tracking-widest uppercase gold-text">Private Jacuzzis • City Center • Luxury Design</p>
+        </div>
+    </header>
+
+    <section id="rooms" class="py-20 px-10">
+        <h2 class="text-4xl text-center mb-16">Our Signature Suites</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden h-96 mb-4">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427"
+                        class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="text-xl gold-text">Golden Room</h3>
+                <p class="text-gray-400 text-sm italic">Jacuzzi / City View / King Bed</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-zinc-900 px-10 text-center">
+        <h2 class="text-4xl mb-8">Ready for an Unforgettable Night?</h2>
+        <p class="mb-10 text-gray-400">Savanorių pr. 1, Vilnius | +370 699 17391</p>
+        <form class="max-w-xl mx-auto space-y-4">
+            <input type="text" placeholder="Your Name"
+                class="w-full bg-black border border-zinc-700 p-4 outline-none focus:border-amber-500">
+            <input type="email" placeholder="Email Address"
+                class="w-full bg-black border border-zinc-700 p-4 outline-none focus:border-amber-500">
+            <button
+                class="w-full bg-white text-black font-bold py-4 uppercase tracking-widest hover:bg-amber-500 transition">Inquire
+                Availability</button>
+        </form>
+    </section>
+
+</body>
+
+</html>

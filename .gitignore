@@ -1,0 +1,42 @@
+# Logs
+logs/
+*.log
+*.log.*
+
+# Keep logs directory structure
+!logs/.gitkeep
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+~*
+
+# Python (if using server scripts)
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# Node modules (if using npm)
+node_modules/
+
+# Build outputs (if any)
+dist/
+build/

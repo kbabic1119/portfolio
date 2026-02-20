@@ -1,0 +1,65 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="spfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4A90D9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E5C8A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tubeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0F4FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8E0F5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow3">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="#E8F4F8"/>
+  
+  <!-- Sun Background -->
+  <circle cx="200" cy="200" r="100" fill="url(#sunGrad)" opacity="0.1"/>
+  
+  <!-- Tube Body -->
+  <rect x="130" y="120" width="140" height="180" rx="20" fill="url(#tubeGrad)" filter="url(#shadow3)"/>
+  
+  <!-- Tube Shoulder -->
+  <path d="M 130 140 L 130 130 Q 130 115 150 115 L 250 115 Q 270 115 270 130 L 270 140" fill="url(#tubeGrad)"/>
+  
+  <!-- Cap -->
+  <rect x="145" y="75" width="110" height="45" rx="8" fill="url(#spfGrad)" filter="url(#shadow3)"/>
+  <rect x="145" y="75" width="110" height="15" rx="5" fill="#5FA3D9"/>
+  
+  <!-- Label Area -->
+  <rect x="145" y="145" width="110" height="130" rx="8" fill="#FFF" opacity="0.95"/>
+  
+  <!-- Sun Icon -->
+  <circle cx="200" cy="185" r="20" fill="url(#sunGrad)"/>
+  <line x1="200" y1="155" x2="200" y2="165" stroke="#FFA500" stroke-width="3" stroke-linecap="round"/>
+  <line x1="200" y1="205" x2="200" y2="215" stroke="#FFA500" stroke-width="3" stroke-linecap="round"/>
+  <line x1="170" y1="185" x2="180" y2="185" stroke="#FFA500" stroke-width="3" stroke-linecap="round"/>
+  <line x1="220" y1="185" x2="230" y2="185" stroke="#FFA500" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Text -->
+  <text x="200" y="235" font-family="Georgia, serif" font-size="14" fill="#C5A55A" text-anchor="middle" font-weight="bold">Timeless</text>
+  <text x="200" y="255" font-family="Arial" font-size="18" fill="#2E5C8A" text-anchor="middle" font-weight="bold">SPF 50+</text>
+  <text x="200" y="272" font-family="Arial" font-size="8" fill="#666" text-anchor="middle">Protective Serum</text>
+  
+  <!-- UV Protection Badge -->
+  <circle cx="200" cy="200" r="28" stroke="#FFA500" stroke-width="2" fill="none" opacity="0.5"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="100" cy="100" r="15" fill="url(#sunGrad)" opacity="0.4"/>
+  <circle cx="300" cy="120" r="12" fill="url(#sunGrad)" opacity="0.3"/>
+  <circle cx="320" cy="300" r="18" fill="url(#sunGrad)" opacity="0.35"/>
+  <circle cx="80" cy="320" r="10" fill="url(#sunGrad)" opacity="0.4"/>
+  
+  <!-- Sparkles -->
+  <circle cx="340" cy="80" r="2.5" fill="#FFD700" opacity="0.9"/>
+  <circle cx="60" cy="280" r="2" fill="#FFD700" opacity="0.7"/>
+  <circle cx="350" cy="340" r="2" fill="#FFD700" opacity="0.8"/>
+</svg>
