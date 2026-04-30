@@ -1,15 +1,15 @@
-# Portfolio Website
+# ZKA Automations - Portfolio Website
 
-A modern, single-page developer portfolio website showcasing projects and skills.
+A modern, single-page portfolio website showcasing AI automation solutions for dental practices.
 
 ## Quick Start
 
-1. Navigate to the Portfolio directory
+1. Navigate to the project directory
 2. Start the development server
 3. Open in browser
 
 ```bash
-cd C:\Users\ASUS\Desktop\Programming\Portfolio
+cd /path/to/portfolio
 python start-server.py
 ```
 
@@ -20,9 +20,10 @@ Then open your browser to: `http://localhost:8000`
 - **Single-Page Application** - Tab-based navigation without page reloads
 - **Responsive Design** - Works on desktop, tablet, and mobile devices
 - **Smooth Animations** - CSS transitions for professional feel
-- **Project Showcase** - Dedicated portfolio section
-- **Contact CTA** - "Work with me" call-to-action button
-- **Tech Stack Display** - Floating tech icons showing skills
+- **Services Showcase** - Dedicated section for automation services
+- **Case Studies** - Portfolio of dental automation projects
+- **Contact CTA** - "Book a Free Consultation" call-to-action
+- **Floating Icons** - Automation-themed floating icons
 
 ## Tech Stack
 
@@ -36,52 +37,37 @@ Then open your browser to: `http://localhost:8000`
 ```
 Portfolio/
 ├── docs/               # Documentation
-│   ├── README.md       # This file
-│   ├── ARCHITECTURE.md # System design
-│   └── DEBUGGING.md    # Troubleshooting
-├── logs/               # Application logs
+│   └── README.md       # This file
 ├── img/                # Images and assets
-├── projects/           # Portfolio project showcases
 ├── index.html          # Main HTML file
 ├── style.css           # Styling and animations
 ├── script.js           # Navigation and interactions
 ├── photo.jpeg          # Profile photo
+├── favicon.svg         # Site favicon
 └── start-server.py     # Development server
 ```
 
-## Usage
+## Pages
 
-### Development
+- **Home** - Hero section with value proposition and key stats
+- **Services** - Six automation services for dental practices
+- **Case Studies** - Portfolio of completed automation projects
+- **About** - About ZKA Automations and tools used
+- **Contact** - Book a Free Consultation form
 
-```bash
-# Start the server
-python start-server.py
+## Services Offered
 
-# Server runs on http://localhost:8000
-# Edit files and refresh browser to see changes
-```
-
-### Navigation
-
-The site uses tab-based navigation:
-- **Home** - Introduction and hero section
-- **Portfolio** - Project showcases
-- **About** - About the developer
-- **Contact** - Work with me CTA
-
-### Adding Projects
-
-Projects are stored in the `/projects` directory. Each project can have its own subdirectory with assets.
-
-## Documentation
-
-- [Architecture](ARCHITECTURE.md) - System design and structure
-- [Debugging](DEBUGGING.md) - Troubleshooting guide
+1. Appointment Booking Automation
+2. Patient Follow-ups & Reminders
+3. AI Chatbots
+4. Billing & Insurance Automation
+5. Marketing Automation
+6. Review Generation
 
 ## Author
 
-**Kazim** - Full Stack Developer
+**Kazim** - Founder, ZKA Automations
 
 ## Version
 
-**1.0.0** - Initial release (2026-02-12)
+**2.0.0** - Automation Portfolio Redesign

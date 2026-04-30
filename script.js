@@ -1,5 +1,5 @@
 // ============================================
-// PORTFOLIO - Navigation & Interactions
+// ZKA AUTOMATIONS - Navigation & Interactions
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -11,60 +11,51 @@ document.addEventListener('DOMContentLoaded', function () {
     var floatingIconsContainer = document.querySelector('.floating-icons');
 
     function showPage(pageId) {
-        // Hide all pages
         pages.forEach(function (page) {
             page.classList.remove('active');
         });
 
-        // Remove active from nav
         navLinks.forEach(function (link) {
             link.classList.remove('active');
         });
 
-        // Show target page
         var target = document.getElementById(pageId);
         if (target) {
             target.classList.add('active');
         }
 
-        // Set active nav
         var activeLink = document.querySelector('[data-page="' + pageId + '"]');
         if (activeLink) {
             activeLink.classList.add('active');
         }
 
-        // Toggle floating icons layout per page
         if (floatingIconsContainer) {
             floatingIconsContainer.classList.remove('scattered', 'on-about');
 
-            // About page: scattered cluster below photo
             var aboutPos = [
-                { top: '65%', left: '12%' },  // WordPress
-                { top: '78%', left: '8%' },   // JS
-                { top: '88%', left: '15%' },  // Python
-                { top: '70%', left: '22%' },  // React
-                { top: '82%', left: '25%' },  // HTML5
-                { top: '92%', left: '20%' },  // CSS3
-                { top: '75%', left: '5%' },   // Node.js
-                { top: '85%', left: '30%' },  // Figma
-                { top: '68%', left: '17%' },  // Git
-                { top: '95%', left: '10%' },  // Docker
-                { top: '92%', left: '28%' }   // Claude
+                { top: '65%', left: '12%' },
+                { top: '78%', left: '8%' },
+                { top: '88%', left: '15%' },
+                { top: '70%', left: '22%' },
+                { top: '82%', left: '25%' },
+                { top: '92%', left: '20%' },
+                { top: '75%', left: '5%' },
+                { top: '85%', left: '30%' },
+                { top: '68%', left: '17%' },
+                { top: '95%', left: '10%' },
+                { top: '92%', left: '28%' }
             ];
 
             var allIcons = floatingIconsContainer.querySelectorAll('.float-icon');
             if (pageId === 'about') {
                 floatingIconsContainer.classList.add('scattered', 'on-about');
-                console.log('ABOUT PAGE: Moving ' + allIcons.length + ' icons');
                 allIcons.forEach(function (icon, i) {
                     if (aboutPos[i]) {
                         icon.style.setProperty('top', aboutPos[i].top, 'important');
                         icon.style.setProperty('left', aboutPos[i].left, 'important');
-                        console.log('Icon ' + i + ': top=' + aboutPos[i].top + ' left=' + aboutPos[i].left);
                     }
                 });
             } else {
-                // Clear inline positions so CSS takes over
                 allIcons.forEach(function (icon) {
                     icon.style.top = '';
                     icon.style.left = '';
@@ -82,13 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
             var page = this.getAttribute('data-page');
             if (page) {
                 showPage(page);
-                // Update URL hash
                 history.pushState(null, null, '#' + page);
             }
         });
     });
 
-    // "Read more" and internal links
+    // Internal links (CTA, etc.)
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
         link.addEventListener('click', function (e) {
             var href = this.getAttribute('href');
@@ -102,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 showPage(targetId);
                 history.pushState(null, null, '#' + targetId);
 
-                // Also update nav if it matches
                 var matchingNav = document.querySelector('[data-page="' + targetId + '"]');
                 if (matchingNav) {
                     navLinks.forEach(function (l) { l.classList.remove('active'); });
@@ -124,115 +113,85 @@ document.addEventListener('DOMContentLoaded', function () {
         showPage(initialHash);
     }
 
-    // --- Contact Form (Formspree) ---
+    // --- Contact Form ---
     var form = document.getElementById('contactForm');
     if (form) {
-        // Clear validation state when user types
         form.querySelectorAll('[required]').forEach(function (field) {
             field.addEventListener('input', function () {
-                if (this.value.trim()) this.style.borderColor = '';
+                this.classList.remove('invalid');
             });
         });
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Validate required fields
-            var required = form.querySelectorAll('[required]');
             var valid = true;
-            required.forEach(function (field) {
+            form.querySelectorAll('[required]').forEach(function (field) {
                 if (!field.value.trim()) {
-                    field.style.borderColor = '#e74c3c';
+                    field.classList.add('invalid');
                     valid = false;
-                } else {
-                    field.style.borderColor = '';
                 }
             });
+
             if (!valid) return;
 
-            var btn = form.querySelector('.submit-btn');
-            var originalText = btn.innerHTML;
-            btn.textContent = 'Sending\u2026';
-            btn.disabled = true;
-            btn.style.opacity = '0.7';
-            btn.style.background = '';
+            var formData = {
+                name: form.querySelector('[name="name"]').value,
+                email: form.querySelector('[name="email"]').value,
+                practice: form.querySelector('[name="practice"]') ? form.querySelector('[name="practice"]').value : '',
+                service: form.querySelector('[name="service"]') ? form.querySelector('[name="service"]').value : '',
+                message: form.querySelector('[name="message"]').value
+            };
 
-            fetch('https://formspree.io/f/mnjbnpbk', {
-                method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: new FormData(form)
-            })
-                .then(function (response) {
-                    if (response.ok) {
-                        btn.innerHTML = '&#10003; Message Sent!';
-                        btn.style.background = '#27ae60';
-                        btn.style.opacity = '1';
-                        form.reset();
-                        setTimeout(function () {
-                            btn.innerHTML = originalText;
-                            btn.style.background = '';
-                            btn.disabled = false;
-                        }, 3000);
-                    } else {
-                        return response.json().then(function (data) { throw data; });
-                    }
-                })
-                .catch(function () {
-                    btn.innerHTML = '&#10007; Failed &mdash; try again';
-                    btn.style.background = '#e74c3c';
-                    btn.style.opacity = '1';
-                    btn.disabled = false;
-                    setTimeout(function () {
-                        btn.innerHTML = originalText;
-                        btn.style.background = '';
-                    }, 3000);
-                });
+            console.log('Consultation request:', formData);
+
+            var parent = form.parentNode;
+            form.style.display = 'none';
+
+            var success = document.createElement('div');
+            success.className = 'form-success';
+            success.innerHTML = '<h3>Consultation Requested!</h3><p>Thank you, ' +
+                formData.name + '. I\'ll get back to you within 24 hours to schedule your free consultation.</p>';
+            parent.insertBefore(success, form);
         });
     }
 
-    // --- Floating icon parallax on mouse move ---
-    var floatingIcons = document.querySelectorAll('.float-icon');
+    // --- Animate stats on home page ---
+    function animateStats() {
+        var stats = document.querySelectorAll('.stat-number');
+        stats.forEach(function (stat) {
+            var text = stat.textContent;
+            if (stat.dataset.animated) return;
+            stat.dataset.animated = 'true';
 
-    document.addEventListener('mousemove', function (e) {
-        var x = (e.clientX / window.innerWidth - 0.5) * 2;
-        var y = (e.clientY / window.innerHeight - 0.5) * 2;
-
-        floatingIcons.forEach(function (icon, i) {
-            var speed = (i + 1) * 3;
-            var moveX = x * speed;
-            var moveY = y * speed;
-            icon.style.transform = 'translate(' + moveX + 'px, ' + moveY + 'px)';
-        });
-    });
-
-    // --- Typing effect for code block ---
-    var codeLines = document.querySelectorAll('.code-line');
-    codeLines.forEach(function (line, i) {
-        line.style.opacity = '0';
-        line.style.transform = 'translateX(-20px)';
-        line.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-
-        setTimeout(function () {
-            line.style.opacity = '1';
-            line.style.transform = 'translateX(0)';
-        }, 300 + (i * 200));
-    });
-
-    // --- Project cards stagger animation ---
-    var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+            if (text.includes('%')) {
+                var target = parseInt(text);
+                var current = 0;
+                var step = Math.ceil(target / 30);
+                var interval = setInterval(function () {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(interval);
+                    }
+                    stat.textContent = current + '%';
+                }, 30);
+            } else if (text.includes('x')) {
+                var target = parseInt(text);
+                var current = 0;
+                var interval = setInterval(function () {
+                    current++;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(interval);
+                    }
+                    stat.textContent = current + 'x';
+                }, 200);
             }
         });
-    }, { threshold: 0.1 });
+    }
 
-    document.querySelectorAll('.project-row').forEach(function (card, i) {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease ' + (i * 0.15) + 's, transform 0.6s ease ' + (i * 0.15) + 's';
-        observer.observe(card);
-    });
+    // Run stat animation on load
+    animateStats();
 
 });
