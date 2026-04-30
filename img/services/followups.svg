@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0FDFA"/>
+      <stop offset="100%" style="stop-color:#EFF6FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="200" rx="12" fill="url(#bg2)"/>
+  <!-- Phone mockup -->
+  <rect x="40" y="25" width="90" height="150" rx="14" fill="white" stroke="#0D9488" stroke-width="2"/>
+  <rect x="48" y="42" width="74" height="115" rx="4" fill="#F0FDFA"/>
+  <circle cx="85" cy="34" r="3" fill="#0D9488" opacity="0.3"/>
+  <!-- Messages on phone -->
+  <rect x="54" y="50" width="50" height="14" rx="7" fill="#0D9488" opacity="0.2"/>
+  <rect x="54" y="70" width="60" height="14" rx="7" fill="#2563EB" opacity="0.2"/>
+  <rect x="54" y="90" width="45" height="14" rx="7" fill="#0D9488" opacity="0.2"/>
+  <rect x="54" y="110" width="55" height="14" rx="7" fill="#2563EB" opacity="0.2"/>
+  <rect x="54" y="130" width="35" height="14" rx="7" fill="#0D9488" opacity="0.2"/>
+  <!-- Sequence timeline -->
+  <circle cx="180" cy="45" r="16" fill="#2563EB" opacity="0.15" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="180" y="49" font-family="Inter, sans-serif" font-size="10" fill="#2563EB" font-weight="700" text-anchor="middle">Day 1</text>
+  <line x1="196" y1="45" x2="234" y2="45" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <circle cx="250" cy="45" r="16" fill="#0D9488" opacity="0.15" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="250" y="49" font-family="Inter, sans-serif" font-size="10" fill="#0D9488" font-weight="700" text-anchor="middle">Day 3</text>
+  <line x1="266" y1="45" x2="304" y2="45" stroke="#0D9488" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <circle cx="320" cy="45" r="16" fill="#F59E0B" opacity="0.15" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="320" y="49" font-family="Inter, sans-serif" font-size="10" fill="#F59E0B" font-weight="700" text-anchor="middle">Day 7</text>
+  <!-- Email icons -->
+  <rect x="160" y="80" width="40" height="28" rx="4" fill="white" stroke="#2563EB" stroke-width="1.5"/>
+  <path d="M163 83 L180 96 L197 83" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+  <text x="180" y="124" font-family="Inter, sans-serif" font-size="9" fill="#2563EB" text-anchor="middle">Email</text>
+  <!-- SMS icon -->
+  <rect x="230" y="80" width="40" height="28" rx="4" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <rect x="238" y="88" width="24" height="4" rx="2" fill="#0D9488" opacity="0.4"/>
+  <rect x="238" y="96" width="16" height="4" rx="2" fill="#0D9488" opacity="0.3"/>
+  <text x="250" y="124" font-family="Inter, sans-serif" font-size="9" fill="#0D9488" text-anchor="middle">SMS</text>
+  <!-- Check/success -->
+  <rect x="300" y="80" width="40" height="28" rx="4" fill="white" stroke="#F59E0B" stroke-width="1.5"/>
+  <circle cx="320" cy="94" r="8" fill="#F59E0B" opacity="0.2"/>
+  <path d="M315 94 L318 97 L325 90" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <text x="320" y="124" font-family="Inter, sans-serif" font-size="9" fill="#F59E0B" text-anchor="middle">Booked</text>
+  <!-- Stats bar -->
+  <rect x="160" y="145" width="200" height="35" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="175" y="160" font-family="Inter, sans-serif" font-size="9" fill="#64748B">Open Rate</text>
+  <rect x="175" y="165" width="50" height="5" rx="2.5" fill="#E2E8F0"/>
+  <rect x="175" y="165" width="42" height="5" rx="2.5" fill="#2563EB"/>
+  <text x="280" y="160" font-family="Inter, sans-serif" font-size="9" fill="#64748B">Reply Rate</text>
+  <rect x="280" y="165" width="50" height="5" rx="2.5" fill="#E2E8F0"/>
+  <rect x="280" y="165" width="30" height="5" rx="2.5" fill="#0D9488"/>
+</svg>
