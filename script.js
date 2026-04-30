@@ -1,5 +1,5 @@
 // ============================================
-// ZKA AUTOMATIONS - Navigation & Interactions
+// ZKA AUTOMATION - Navigation & Interactions
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function () {
