@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EFF6FF"/>
+      <stop offset="100%" style="stop-color:#FFFBEB"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="200" rx="12" fill="url(#bg3)"/>
+  <!-- Chat window -->
+  <rect x="80" y="15" width="240" height="170" rx="12" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <!-- Header bar -->
+  <rect x="80" y="15" width="240" height="35" rx="12" fill="#2563EB" opacity="0.08"/>
+  <rect x="80" y="38" width="240" height="12" fill="#2563EB" opacity="0.08"/>
+  <circle cx="100" cy="32" r="10" fill="#2563EB" opacity="0.2"/>
+  <rect x="96" y="28" width="8" height="8" rx="2" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="96" cy="30" r="1.5" fill="#2563EB"/>
+  <circle cx="104" cy="30" r="1.5" fill="#2563EB"/>
+  <text x="118" y="30" font-family="Inter, sans-serif" font-size="10" fill="#2563EB" font-weight="600">ZKA Bot</text>
+  <circle cx="118" cy="37" r="3" fill="#10B981"/>
+  <text x="126" y="40" font-family="Inter, sans-serif" font-size="8" fill="#64748B">Online</text>
+  <!-- User message -->
+  <rect x="180" y="60" width="120" height="28" rx="12" fill="#2563EB" opacity="0.1"/>
+  <rect x="192" y="70" width="80" height="5" rx="2.5" fill="#2563EB" opacity="0.35"/>
+  <rect x="200" y="78" width="55" height="4" rx="2" fill="#2563EB" opacity="0.2"/>
+  <!-- Bot message -->
+  <rect x="100" y="96" width="140" height="38" rx="12" fill="#0D9488" opacity="0.1"/>
+  <rect x="112" y="104" width="100" height="5" rx="2.5" fill="#0D9488" opacity="0.35"/>
+  <rect x="112" y="113" width="80" height="4" rx="2" fill="#0D9488" opacity="0.2"/>
+  <rect x="112" y="121" width="60" height="4" rx="2" fill="#0D9488" opacity="0.15"/>
+  <!-- Quick reply buttons -->
+  <rect x="100" y="142" width="60" height="20" rx="10" fill="#F59E0B" opacity="0.12" stroke="#F59E0B" stroke-width="1"/>
+  <text x="130" y="155" font-family="Inter, sans-serif" font-size="8" fill="#F59E0B" font-weight="500" text-anchor="middle">Book Now</text>
+  <rect x="168" y="142" width="55" height="20" rx="10" fill="#2563EB" opacity="0.1" stroke="#2563EB" stroke-width="1"/>
+  <text x="195.5" y="155" font-family="Inter, sans-serif" font-size="8" fill="#2563EB" font-weight="500" text-anchor="middle">Pricing</text>
+  <rect x="231" y="142" width="50" height="20" rx="10" fill="#0D9488" opacity="0.1" stroke="#0D9488" stroke-width="1"/>
+  <text x="256" y="155" font-family="Inter, sans-serif" font-size="8" fill="#0D9488" font-weight="500" text-anchor="middle">FAQ</text>
+  <!-- Typing indicator -->
+  <rect x="100" y="168" width="45" height="14" rx="7" fill="#0D9488" opacity="0.08"/>
+  <circle cx="113" cy="175" r="2.5" fill="#0D9488" opacity="0.3"/>
+  <circle cx="121" cy="175" r="2.5" fill="#0D9488" opacity="0.5"/>
+  <circle cx="129" cy="175" r="2.5" fill="#0D9488" opacity="0.7"/>
+  <!-- Decorative -->
+  <circle cx="45" cy="50" r="20" fill="#2563EB" opacity="0.05"/>
+  <circle cx="365" cy="160" r="25" fill="#F59E0B" opacity="0.05"/>
+</svg>
